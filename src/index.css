@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Caveat:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Caveat", cursive;
+  --color-neon: #c6ff00;
+  --color-dark: #0a0a0a;
+  --color-charcoal: #1a1a1a;
+}
+
+@layer base {
+  body {
+    @apply bg-dark text-white font-sans antialiased selection:bg-neon selection:text-dark;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display font-bold tracking-tight;
+  }
+}
+
+.glow-neon {
+  box-shadow: 0 0 20px rgba(198, 255, 0, 0.3);
+}
+
+.text-glow-neon {
+  text-shadow: 0 0 10px rgba(198, 255, 0, 0.5);
+}
+
+.glass-card {
+  @apply bg-charcoal/50 backdrop-blur-md border border-white/10;
+}
+
+.neon-border {
+  @apply border-neon/50 hover:border-neon transition-colors duration-300;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-dark;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-charcoal rounded-full hover:bg-neon/50 transition-colors;
+}
